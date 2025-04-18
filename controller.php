@@ -1,21 +1,28 @@
 <?php
     include_once "controllers/ControllerAction.php";
     include_once "controllers/ProductController.php";
-    include_once "models/ProductDAO.php";
+    include_once "models/productDAO.php";
 
     class FrontController { 
         private $controllers;
         
 
         public function __construct(){
-            $this->showErrors(0);
+            $this->showErrors(1);
             $this->controllers = $this->loadControllers();
         }
 
         public function run(){
             //***** Get Request Method and Page Variable *****/
             $method = $_SERVER['REQUEST_METHOD'];
+            if ($method==null){
+                $method="GET";
+            }
             $page = $_REQUEST['page'];
+            echo $page;
+            if ($page==null){
+                $page="list";
+            }
         
             //*****Process Controller Based on Method and Page *** */
             $controller = $this->controllers[$method.$page];
