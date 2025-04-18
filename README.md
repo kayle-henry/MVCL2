@@ -1,1 +1,1 @@
-You are to create a system according to the MVC (like last lab) but with ADD and UPDATE to the Products table.  We will use the other tables in our last lab.  you do not have to address any files to them yet.
+You are to create a system according to the MVC (like last lab) but with ADD and UPDATE(updates products//price) to the Products table.  We will use the other tables in our last lab.  you do not have to address any files to them yet.
