@@ -4,7 +4,7 @@
     class ProductDAO {
 
         public function getConnection(){
-            $mysqli = new mysqli("127.0.0.1", "cs2033user", "prodDB", "cs2033pass");
+            $mysqli = new mysqli("127.0.0.1", "cs2033user", "cs2033pass", "prodDB");
             if ($mysqli->connect_errno) {
                 $mysqli=null;
             }
@@ -52,6 +52,9 @@
                 $product->load($row);
                 $products[]=$product;
             }    
+            if (!$stmt) {
+                throw new Exception("Failed to prepare statement: " . $connection->error);
+            }
             $stmt->close();
             $connection->close();
             return $products;
