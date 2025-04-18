@@ -5,7 +5,7 @@ CREATE DATABASE prodDB;
 use prodDB;
 drop user if exists 'cs2033user'@'localhost';
 
-create user 'cs2033user'@'localhost' identified by 'cs2033pass';
+CREATE USER IF NOT EXISTS 'cs2033user'@'localhost' identified by 'cs2033pass';
 grant all on prodDB.* to 'cs2033user'@'localhost';
 
 
@@ -21,15 +21,15 @@ CREATE TABLE products (
   PRIMARY KEY (productID)
 )engine=innodb;
 
-CREATE TABLE orders (
-  orderID        INT(11)        NOT NULL   AUTO_INCREMENT,
-  customerID     INT            NOT NULL,
-  orderDate      DATETIME       NOT NULL,
-  orderSum       INT            NOT NULL,
-  PRIMARY KEY (orderID)
-) engine=innodb;
+--CREATE TABLE orders (
+ -- orderID        INT(11)        NOT NULL   AUTO_INCREMENT,
+ -- customerID     INT            NOT NULL,
+ -- orderDate      DATETIME       NOT NULL,
+ -- orderSum       INT            NOT NULL,
+ -- PRIMARY KEY (orderID)
+--) engine=innodb;
 
-
+TRUNCATE TABLE products;
 INSERT INTO products VALUES
 (1, 1, 'strat', 'Fender Stratocaster', '699.00'),
 (2, 1, 'les_paul', 'Gibson Les Paul', '1199.00'),
