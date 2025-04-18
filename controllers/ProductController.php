@@ -52,7 +52,9 @@
 
         function processPOST(){
             $productID=$_POST['productID'];
+            echo $productID;
             $listPrice = $_POST['listPrice'];
+            echo $listPrice;
             $submit=$_POST['submit'];
             if($submit=='CONFIRM'){
                 $productDAO = new ProductDAO();
