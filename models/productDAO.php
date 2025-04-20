@@ -13,8 +13,8 @@
 
         public function addProduct($product){
             $connection=$this->getConnection();
-            $stmt = $connection->prepare("INSERT INTO products (productID, categoryID, productCode, productName, listPrice) VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssss", $product->getProductID(), $product->getCategoryID(),$product->getProductCode(), $product->getProductName(), $product->getListPrice());
+            $stmt = $connection->prepare("INSERT INTO products (categoryID, productCode, productName, listPrice) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("issd",$product->getCategoryID(),$product->getProductCode(), $product->getProductName(), $product->getListPrice());
             $stmt->execute();
             $stmt->close();
             $connection->close();
