@@ -6,13 +6,26 @@
     <title>CS 2033 | Products Database</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+<style>
+    .btns {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 10px;
+    }
+    h1 {
+        margin-bottom: 20px;
+        padding-top: 20px;
+    }
+</style>
 <body>
     <h1><center>Product Database</center></h1>
     <div class="container">
         <div class="col">
             <form action="controller.php" method="GET">
+            <div class="btns">
             <button class="btn btn-primary" type="submit" name="page" value="add">Add Product</button>
             <button class="btn btn-primary" type="submit" name="page" value="update">Update Product Price</button>
+            </div>
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
