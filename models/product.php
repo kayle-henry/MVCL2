@@ -15,7 +15,7 @@
 
         }
 
-        public function setProductID($productID){//only use when ID already exists in DB
+        public function setProductID($productID){//database will auto increment this
             $this->productID=$productID;
         }
 
