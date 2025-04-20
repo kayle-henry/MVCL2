@@ -1,8 +1,4 @@
 <?php
-    //include "ControllerAction.php";
-    //include "model/ContactDAO.php";
-
-
     class ProductList implements ControllerAction{
 
         function processGET(){
@@ -24,12 +20,14 @@
         }
 
         function processPOST(){
+            $productID=$_POST['productID'];
             $categoryID=$_POST['categoryID'];
             $productCode=$_POST['productCode'];
             $productName=$_POST['productName'];
             $listPrice=$_POST['listPrice'];
 
             $product = new Product();
+            $product->setProductID($productID);
             $product->setCategoryID($categoryID);
             $product->setProductCode($productCode);
             $product->setProductName($productName);
@@ -65,7 +63,7 @@
 
     }
 
-    class ProductDelete implements ControllerAction{
+   /* class ProductDelete implements ControllerAction{
 
         function processGET(){
             $productID = $_GET['productID'];
@@ -84,6 +82,5 @@
             exit;
         }
 
-    }
-
+    }*/
 ?>
