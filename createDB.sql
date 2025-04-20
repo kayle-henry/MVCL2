@@ -1,4 +1,3 @@
-
 DROP DATABASE IF EXISTS prodDB;
 CREATE DATABASE prodDB;
 
@@ -8,12 +7,8 @@ drop user if exists 'cs2033user'@'localhost';
 CREATE USER IF NOT EXISTS 'cs2033user'@'localhost' identified by 'cs2033pass';
 grant all on prodDB.* to 'cs2033user'@'localhost';
 
-
-
-
-
 CREATE TABLE products (
-  productID        INT(11)        NOT NULL   AUTO_INCREMENT,
+  productID        INT AUTO_INCREMENT PRIMARY KEY,
   categoryID       INT(11)        NOT NULL,
   productCode      VARCHAR(10)    NOT NULL   UNIQUE,
   productName      VARCHAR(255)   NOT NULL,
