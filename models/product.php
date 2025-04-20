@@ -15,7 +15,7 @@
 
         }
 
-        public function setProductID($productID){
+        public function setProductID($productID){//only use when ID already exists in DB
             $this->productID=$productID;
         }
 
