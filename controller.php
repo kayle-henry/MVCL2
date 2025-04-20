@@ -8,23 +8,21 @@
         
 
         public function __construct(){
-            $this->showErrors(1);
+            $this->showErrors(0);
             $this->controllers = $this->loadControllers();
         }
 
         public function run(){
-            //***** Get Request Method and Page Variable *****/
             $method = $_SERVER['REQUEST_METHOD'];
             if ($method==null){
                 $method="GET";
             }
             $page = $_REQUEST['page'];
-            echo $page;
+            //echo $page;
             if ($page==null){
                 $page="list";
             }
         
-            //*****Process Controller Based on Method and Page *** */
             $controller = $this->controllers[$method.$page];
             if($method=='GET'){
                 $controller->processGET();
