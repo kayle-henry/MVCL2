@@ -24,14 +24,12 @@
         }
 
         function processPOST(){
-            $productID=$_POST['productID'];
             $categoryID=$_POST['categoryID'];
             $productCode=$_POST['productCode'];
             $productName=$_POST['productName'];
             $listPrice=$_POST['listPrice'];
 
             $product = new Product();
-            $product->setProductID($productID);
             $product->setCategoryID($categoryID);
             $product->setProductCode($productCode);
             $product->setProductName($productName);
